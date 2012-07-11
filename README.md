@@ -24,6 +24,9 @@ Create an initializer for your basecamp config in config/initializers, `sc_campf
     Sc::Campfire.config do |config|
       config.username = 'some hash'
       config.password = 'some password'
+
+      # optional
+
       config.rooms += [campfire room id] # has r/deployments as default
       config.project_name = 'Happy Feet' # defaults to your application name
     end
