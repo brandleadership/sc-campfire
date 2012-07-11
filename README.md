@@ -18,11 +18,13 @@ Or install it yourself as:
 
 ## Usage
 
-If you want to add additional rooms to be notified when a deployment happens, add some configuration.
-Create an initializer for your basecamp config in config/initializers, `sc_campfire.rb`:
+
+Create an initializer for your basecamp config in config/initializers, `sc_campfire.rb` and configure it:
 
     Sc::Campfire.config do |config|
-      config.rooms += [campfire room id]
+      config.username = 'some hash'
+      config.password = 'some password'
+      config.rooms += [campfire room id] # has r/deployments as default
       config.project_name = 'Happy Feet' # defaults to your application name
     end
 
