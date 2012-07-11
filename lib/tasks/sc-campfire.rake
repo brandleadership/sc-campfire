@@ -1,7 +1,7 @@
 namespace :sc do
   namespace :campfire do
     desc 'send deployment notification to campfire'
-    task :notify do
+    task :notify => :environment do
       Sc::Campfire.config.rooms.each do |room|
         room = Sc::Campfire::Campfire.room(room)
         room.join
