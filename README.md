@@ -31,6 +31,18 @@ Create an initializer for your basecamp config in config/initializers, `sc_campf
       config.project_name = 'Happy Feet' # defaults to your application name
     end
 
+### Notifiying your campfire room
+Add this to your deployment task:
+
+    if Rails.env.production?
+      puts 'Notifiying campfire'
+      Rake::Task["sc:campfire:notify"].invoke
+    end
+
+Or call it with rake
+
+    $ RAILS_ENV=your_env rake sc:campfire:notify
+
 ## Contributing
 
 1. Fork it
